@@ -33,7 +33,7 @@ jobs:
         run: echo "latest release is ${{steps.find_latest_tag.outputs.tag}}"
 
       - name: Add
-        uses: teppayl/sample_github_action
+        uses: teppayl/sample_github_action@master
         id: add
         with:
           arg1: 1
