@@ -31,3 +31,6 @@ jobs:
 
       - name: Echo Latest Tag
         run: echo "latest release is ${{steps.find_latest_tag.outputs.tag}}"
+
+      - name: Echo GITHUB_TOKEN
+        run: echo "${{secrets.GITHUB_TOKEN}}"
