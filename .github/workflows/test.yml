@@ -20,7 +20,13 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    
+      - name: Find Latest Tag of go
+        uses: oprypin/find-latest-tag@v1.1.0
+        id: find_latest_tag_of_go
+        with:
+          repository: golang/go
+          releases-only: true
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Echo Latest Tag of go
+        run: echo "go's latest release is ${{steps.find_latest_tag_of_go.outputs.tag}}"
