@@ -20,8 +20,8 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - run: KEY="${{ secrets.SSHKEY_TEPPAYL_TEST_PRIVATE_REPOSITORY }}"
-      - run: echo $KEY | base64
+      # - run: KEY="${{ secrets.SSHKEY_TEPPAYL_TEST_PRIVATE_REPOSITORY }}"
+      - run: echo "${{ secrets.SSHKEY_TEPPAYL_TEST_PRIVATE_REPOSITORY }}" | base64
       # - run: B64=$(echo $KEY | base64)
       # - run: echo $B64
 
