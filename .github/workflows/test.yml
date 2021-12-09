@@ -35,6 +35,7 @@ jobs:
         with:
           repository: 'teppayl/sample_github_action'
 
+      - run: pwd && ls -a && /usr/bin/git status && /usr/bin/git remote -v
       - run: pwd && ls -a && git status && git remote -v
 
       - run: pwd
