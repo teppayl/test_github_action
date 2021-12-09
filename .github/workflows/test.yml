@@ -34,15 +34,8 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: 'teppayl/sample_github_action'
-        
-      - run: git status
 
-      - name: test checkout
-        uses: actions/checkout@v2
-        with:
-          repository: 'teppayl/test_private_repository'
-
-      - run: git status
+      - run: git status && git remove -v
 
       - run: pwd
       - run: ls
