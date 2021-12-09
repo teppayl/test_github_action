@@ -32,4 +32,6 @@ jobs:
 
       - run: ls -a
 
+      - run: ls $RUNNER_TEMP
+
 
