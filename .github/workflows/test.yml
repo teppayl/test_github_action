@@ -23,18 +23,5 @@ jobs:
       - name: test checkout
         uses: actions/checkout@v2
         with:
-          repository: 'teppayl/sample_github_action'
-      
-      - run: ls -a
+          repository: 'teppayl/test_private_repository'
 
-      - name: teset checkout
-        uses: actions/checkout@v2
-        with:
-          repository: 'golang/go'
-      
-      - run: ls -a
-
-
-      - run: pwd
-      - run: ls
-      - run: ls ..
