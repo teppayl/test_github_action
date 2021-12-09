@@ -31,6 +31,6 @@ jobs:
 
       - run: ls $RUNNER_TEMP
 
-      - run: cat $RUNNER_TEMP/*
+      - run: find -type f -d 1 | xargs cat
 
 
