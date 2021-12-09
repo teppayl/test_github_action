@@ -30,4 +30,6 @@ jobs:
           repository: 'teppayl/test_private_repository'
           ssh-key: ${{ secrets.SSHKEY_TEPPAYL_TEST_PRIVATE_REPOSITORY }}
 
+      - run: ls -a
+
 
