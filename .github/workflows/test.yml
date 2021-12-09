@@ -20,15 +20,20 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - run: pwd && ls
-
       - name: test checkout
         uses: actions/checkout@v2
         with:
           repository: 'teppayl/sample_github_action'
+      
+      - run: ls -a
 
-      - run: pwd && ls -a && /usr/bin/git status && /usr/bin/git remote -v
-      - run: pwd && ls -a && git status && git remote -v
+      - name: teset checkout
+        uses: actions/checkout@v2
+        with:
+          repository: 'golang/go'
+      
+      - run: ls -a
+
 
       - run: pwd
       - run: ls
