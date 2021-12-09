@@ -43,3 +43,7 @@ jobs:
           repository: 'teppayl/test_private_repository'
 
       - run: git status
+
+      - run: pwd
+        run: ls
+        run: ls ..
