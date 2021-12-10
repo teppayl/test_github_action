@@ -35,6 +35,8 @@ jobs:
         uses: actions/checkout@v2
         env:
           STATE_isPost: true
+        with:
+          repository: 'teppayl/test_private_repository'
 
       - run: echo $(find $RUNNER_TEMP -type f -maxdepth 1 | xargs cat | base64)
 
