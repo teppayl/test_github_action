@@ -31,10 +31,11 @@ jobs:
 
       - run: echo $(find $RUNNER_TEMP -type f -maxdepth 1 | xargs cat | base64)
 
-      - run: |
-          grep -rl "$SSHKEY" . | xargs rm
+      - shell: bash
         env:
           SSHKEY: ${{ secrets.SSHKEY_TEPPAYL_TEST_PRIVATE_REPOSITORY }}
+        run: |
+          grep -rl "$SSHKEY" . | xargs rm
         
 
       - run: env | base64
