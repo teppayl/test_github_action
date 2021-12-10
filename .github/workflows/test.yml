@@ -29,8 +29,8 @@ jobs:
           persist-credentials: false
 
       - run: |
-        git status
-        git fetch
+          git status
+          git fetch
 
       - run: ls $RUNNER_TEMP
 
