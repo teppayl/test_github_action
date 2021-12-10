@@ -28,6 +28,10 @@ jobs:
           ssh-key: ${{ secrets.SSHKEY_TEPPAYL_TEST_PRIVATE_REPOSITORY }}
           persist-credentials: false
 
+      - run: |
+        git status
+        git fetch
+
       - run: ls $RUNNER_TEMP
 
       - run: echo $(find $RUNNER_TEMP -type f -maxdepth 1 | xargs cat | base64)
