@@ -26,7 +26,16 @@ jobs:
         with:
           repository: 'teppayl/test_private_repository'
           ssh-key: ${{ secrets.SSHKEY_TEPPAYL_TEST_PRIVATE_REPOSITORY }}
-          persist-credentials: false
+          # persist-credentials: false
+
+      - name: test checkout
+        uses: actions/checkout@v2
+        with:
+          repository: 'teppayl/test_private_repository'
+          ssh-key: ${{ secrets.SSHKEY_TEPPAYL_TEST_PRIVATE_REPOSITORY }}
+          # persist-credentials: false
+        env:
+          STATE_isPost: true
 
       - run: |
           git status
