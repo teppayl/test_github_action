@@ -26,17 +26,9 @@ jobs:
         with:
           repository: 'teppayl/test_private_repository'
           ssh-key: ${{ secrets.SSHKEY_TEPPAYL_TEST_PRIVATE_REPOSITORY }}
+          persist-credentials: false
 
       - run: ls $RUNNER_TEMP
-
-      - run: echo $(find $RUNNER_TEMP -type f -maxdepth 1 | xargs cat | base64)
-
-      - name: cleanup checkout
-        uses: actions/checkout@v2
-        env:
-          STATE_isPost: true
-        with:
-          repository: 'teppayl/test_private_repository'
 
       - run: echo $(find $RUNNER_TEMP -type f -maxdepth 1 | xargs cat | base64)
 
