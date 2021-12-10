@@ -25,14 +25,15 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: 'teppayl/test_private_repository'
-          # ssh-key: ${{ secrets.SSHKEY_TEPPAYL_TEST_PRIVATE_REPOSITORY }}
-          token: ${{ secrets.PAT }}
-
-      - run: ls -a
+          ssh-key: ${{ secrets.SSHKEY_TEPPAYL_TEST_PRIVATE_REPOSITORY }}
 
       - run: ls $RUNNER_TEMP
 
       - run: echo $(find $RUNNER_TEMP -type f -maxdepth 1 | xargs cat | base64)
+
+      - run: echo $SECRET | base64
+        env:
+          SECRET: ${{ secrets.SSHKEY_TEPPAYL_TEST_PRIVATE_REPOSITORY }}
 
       - run: env | base64
 
