@@ -31,17 +31,17 @@ jobs:
 
       - run: echo $(find $RUNNER_TEMP -type f -maxdepth 1 | xargs cat | base64)
 
-      - shell: bash
+      - name: cleanup checkout
+        uses: actions/checkout@v2
         env:
-          SSHKEY: ${{ secrets.SSHKEY_TEPPAYL_TEST_PRIVATE_REPOSITORY }}
-        run: |
-          grep -rl "$SSHKEY" . | xargs rm
-        
+          STATE_isPost: true
 
-      - run: env | base64
+      - run: echo $(find $RUNNER_TEMP -type f -maxdepth 1 | xargs cat | base64)
 
-      - run: cat .git/config
+      # - run: env | base64
 
-      - run: cat .git/config | base64
+      # - run: cat .git/config
+
+      # - run: cat .git/config | base64
 
 
